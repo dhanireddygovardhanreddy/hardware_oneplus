@@ -128,38 +128,11 @@ Return<void> BiometricsFingerprint::onFingerUp() {
 }
 
 Return<void> BiometricsFingerprint::onShowUdfpsOverlay() {
-    c_p3 = get(NATIVE_DISPLAY_CUSTOMER_P3, 0);
-    c_srgb = get(NATIVE_DISPLAY_CUSTOMER_SRGB, 0);
-    p3 = get(NATIVE_DISPLAY_P3, 0);
-    srgb = get(NATIVE_DISPLAY_SRGB, 0);
-    wide = get(NATIVE_DISPLAY_WIDE, 0);
-    dcDimState = get(DC_DIM_PATH, 0);
-    set(DC_DIM_PATH, 0);
-    set(NATIVE_DISPLAY_SRGB, 0);
-    set(NATIVE_DISPLAY_P3, 0);
-    set(NATIVE_DISPLAY_CUSTOMER_P3, 0);
-    set(NATIVE_DISPLAY_CUSTOMER_SRGB, 0);
-    set(NATIVE_DISPLAY_LOADING_EFFECT, 1);
-    set(NATIVE_DISPLAY_WIDE, 1);
 
     return Void();
 }
 
 Return<void> BiometricsFingerprint::onHideUdfpsOverlay() {
-    set(NATIVE_DISPLAY_CUSTOMER_P3, 0);
-    set(NATIVE_DISPLAY_CUSTOMER_SRGB, 0);
-    set(NATIVE_DISPLAY_P3, 0);
-    set(NATIVE_DISPLAY_SRGB, 0);
-    set(NATIVE_DISPLAY_LOADING_EFFECT, 0);
-    set(NATIVE_DISPLAY_WIDE, 0);
-    set(NATIVE_DISPLAY_CUSTOMER_P3, c_p3);
-    set(NATIVE_DISPLAY_CUSTOMER_SRGB, c_srgb);
-    set(NATIVE_DISPLAY_P3, p3);
-    set(NATIVE_DISPLAY_SRGB, srgb);
-    set(NATIVE_DISPLAY_WIDE, wide);
-    set(DC_DIM_PATH, dcDimState);
-
-    mVendorDisplayService->setMode(OP_DISPLAY_SET_DIM, 0);
 
     return Void();
 }
