@@ -9,7 +9,7 @@ android_app {
     system_ext_specific: true,
 
     static_libs: [
-        "com.pixys.settings.resources",
+        "org.crystalos.settings.resources",
     ],
 
     optimize: {
